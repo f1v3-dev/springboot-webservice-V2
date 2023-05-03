@@ -1,5 +1,5 @@
-# springboot-webservice
-스프링 부트와 AWS로 혼자 구현하는 웹 서비스, 이동욱
+
+# Capstone_design
 
 ## 개발환경
 - JAVA 8
@@ -15,3 +15,6 @@
 - Build : Github Action
 - Deploy : AWS - CodeDeploy
 > Github Action으로 CI :(https://github.com/jojoldu/freelec-springboot2-webservice/issues/806)
+=======
+# Capstone_design
+>>>>>>> 82ff6d4b3d06ce0a5d56137dccb0f0b4136bb547
