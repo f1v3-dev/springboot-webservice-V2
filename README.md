@@ -16,5 +16,3 @@
 - Deploy : AWS - CodeDeploy
 > Github Action으로 CI :(https://github.com/jojoldu/freelec-springboot2-webservice/issues/806)
 =======
-# Capstone_design
->>>>>>> 82ff6d4b3d06ce0a5d56137dccb0f0b4136bb547
