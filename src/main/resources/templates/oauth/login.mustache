@@ -1,13 +1,97 @@
 {{>layout/header}}
 
-    <a href="/oauth2/authorization/google" class="btn btn-success active" role="button">
-        Google Login
-    </a>
-    <a href="/oauth2/authorization/naver" class="btn btn-secondary active" role="button">
-        Naver Login
-    </a>
-    <a href="/oauth2/authorization/kakao" class="btn btn-warning active" role="button">
-        Kakao Login
-    </a>
+<!--    <a href="/oauth2/authorization/google" class="btn btn-success active" role="button">-->
+<!--        Google Login-->
+<!--    </a>-->
+<!--    <a href="/oauth2/authorization/naver" class="btn btn-secondary active" role="button">-->
+<!--        Naver Login-->
+<!--    </a>-->
+<!--    <a href="/oauth2/authorization/kakao" class="btn btn-warning active" role="button">-->
+<!--        Kakao Login-->
+<!--    </a>-->
 
+<style>
+    .box {
+        width: 500px;
+        height: 80px;
+        margin: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        box-shadow: 0px 2px 4px rgba(0,0,0,0.3);
+        border-radius: 50px;
+    }
+
+    .box:hover {
+        cursor: pointer;
+        transform: scale(1.05);
+        transition: all 0.2s ease-in-out;
+    }
+
+    .box img {
+        width: 50px;
+        height: 50px;
+        margin: 0 350px -40px 0;
+        float: left;
+    }
+
+    .box p {
+        font-size: 16px;
+        font-weight: bold;
+        margin: 10px;
+    }
+
+    .box.naver {
+        border: 2px solid #f2f2f2;
+    }
+
+    .box.google {
+        border: 2px solid #f2f2f2;
+    }
+
+    .box.kakao {
+        border: 2px solid #f2f2f2;
+    }
+
+    .box.naver:hover {
+        border-color: #1EC800;
+    }
+
+    .box.google:hover {
+        border-color: #DB4437;
+    }
+
+    .box.kakao:hover {
+        border-color: #FFEB00;
+    }
+    .header {
+        /* background-color: ; */
+        padding-top: 75px;
+        margin-left: 50px;
+        text-align: left;
+
+    }
+</style>
+    <div class="header">
+        <h1> 모두의 <br> 조선대학교 <br> 캠퍼스 정복</h1>
+    </div>
+
+    <div class="container">
+        <div class="box naver" onclick="location.href='/oauth2/authorization/naver'">
+<!--            <img src="../img/naver.png" alt="naver logo">-->
+            <p> 네이버 로그인</p>
+        </div>
+
+        <div class="box google" onclick="location.href='/oauth2/authorization/google'">
+<!--            <img src="../img/google.png" alt="google logo">-->
+            <p> 구글 로그인</p>
+        </div>
+
+        <div class="box kakao" onclick="location.href='/oauth2/authorization/kakao'">
+<!--            <img src="../img/kakao.png" alt="kakao logo">-->
+            <p> 카카오 로그인</p>
+        </div>
+    </div>
 {{>layout/footer}}
