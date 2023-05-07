@@ -79,4 +79,12 @@ public class IndexController {
         return "introduce";
     }
 
+    @GetMapping("/notice")
+    public String noticePage(Model model, @LoginUser SessionUser user){
+        if (user != null) {
+            model.addAttribute("loginUserName", user.getName());
+        }
+        return "notice";
+    }
+
 }
