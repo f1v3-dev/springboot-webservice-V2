@@ -62,8 +62,14 @@
     <a class="home" href="/">CSU MAP</a>
     <a href="/introduce">소개 페이지</a>
     <a href="/notice">공지사항</a>
-    <a href="/login"> 로그인</a>
-    <a class="menu" style="float: right;">
+    {{#loginUserName}}
+            <a href="/logout">로그아웃</a>
+    {{/loginUserName}}
+    {{^loginUserName}}
+        <a href="/login">로그인</a>
+    {{/loginUserName}}
+
+        <a class="menu" style="float: right;">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
             <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
         </svg>
