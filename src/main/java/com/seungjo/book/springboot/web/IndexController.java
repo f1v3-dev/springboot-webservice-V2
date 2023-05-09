@@ -5,6 +5,7 @@ import com.seungjo.book.springboot.config.auth.dto.SessionUser;
 import com.seungjo.book.springboot.domain.posts.Posts;
 import com.seungjo.book.springboot.domain.user.Role;
 import com.seungjo.book.springboot.domain.user.User;
+import com.seungjo.book.springboot.domain.user.UserRepository;
 import com.seungjo.book.springboot.service.posts.PostsService;
 import com.seungjo.book.springboot.web.dto.PostsResponseDto;
 import lombok.RequiredArgsConstructor;
@@ -17,12 +18,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
+import java.util.Optional;
 
 @RequiredArgsConstructor
 @Controller
 public class IndexController {
 
     private final PostsService postsService;
+
+    private final UserRepository userRepository;
 
     private boolean isAuthenticated() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -88,7 +92,12 @@ public class IndexController {
         if (user != null) {
             model.addAttribute("loginUserName", user.getName());
 
+            Optional<User> userRole = userRepository.findByEmail(user.getEmail());
+            if (userRole.get().getRole() == Role.USER) {
+                model.addAttribute("write", userRole.get().getRole());
+            }
         }
+
 
         model.addAttribute("posts", postsService.findAllDesc());
         return "nav/notice";
